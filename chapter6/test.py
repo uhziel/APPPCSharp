@@ -4,7 +4,7 @@ import bowling
 
 class FrameTest(unittest.TestCase):
     """
-    test class frame
+    test class Frame
     """
 
     def test_score_no_throws(self):
@@ -15,6 +15,16 @@ class FrameTest(unittest.TestCase):
         frame = bowling.Frame()
         frame.add(5)
         self.assertEqual(5, frame.score)
+
+class GameTest(unittest.TestCase):
+    """
+    test class Game
+    """
+
+    def test_one_throw(self):
+        game = bowling.Game()
+        game.add(4)
+        self.assertEqual(4, game.get_score())
 
 if __name__ == '__main__':
     unittest.main()
