@@ -11,5 +11,10 @@ class FrameTest(unittest.TestCase):
         frame = bowling.Frame()
         self.assertEqual(0, frame.score)
 
+    def test_add_one_throw(self):
+        frame = bowling.Frame()
+        frame.add(5)
+        self.assertEqual(5, frame.score)
+
 if __name__ == '__main__':
     unittest.main()
