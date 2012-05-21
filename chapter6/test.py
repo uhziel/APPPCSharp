@@ -32,5 +32,15 @@ class GameTest(unittest.TestCase):
         game.add(4)
         self.assertEqual(9, game.get_score())
 
+    def test_four_throws_no_mark(self):
+        game = bowling.Game()
+        game.add(5)
+        game.add(4)
+        game.add(7)
+        game.add(2)
+        self.assertEqual(18, game.get_score())
+        self.assertEqual(9, game.score_from_frame(1))
+        self.assertEqual(18, game.score_from_frame(2))
+
 if __name__ == '__main__':
     unittest.main()
