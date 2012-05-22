@@ -17,13 +17,20 @@ class Game():
         self._score = 0
         self._throws = [0] * 21
         self._current_throw = 0
+        self._first_throw = True
         self.current_frame = 0
 
     def add(self, pins):
         self._throws[self._current_throw] = pins
         self._current_throw += 1
         self._score += pins
-        self.current_frame = (self._current_throw - 1) / 2 + 1
+
+        # update current frame
+        if self._first_throw:
+            self.current_frame += 1
+            self._first_throw = False
+        else:
+            self._first_throw = True
 
     def get_score(self):
         return self._score
