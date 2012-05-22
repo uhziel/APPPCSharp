@@ -17,11 +17,13 @@ class Game():
         self._score = 0
         self._throws = [0] * 21
         self._current_throw = 0
+        self.current_frame = 0
 
     def add(self, pins):
         self._throws[self._current_throw] = pins
         self._current_throw += 1
         self._score += pins
+        self.current_frame = 1
 
     def get_score(self):
         return self._score
