@@ -23,7 +23,7 @@ class Game():
         self._throws[self._current_throw] = pins
         self._current_throw += 1
         self._score += pins
-        self.current_frame = 1
+        self.current_frame = (self._current_throw - 1) / 2 + 1
 
     def get_score(self):
         return self._score
