@@ -25,7 +25,7 @@ class Game():
         self._current_throw += 1
         self._score += pins
 
-        _adjust_current_frame()
+        self._adjust_current_frame()
 
     def _adjust_current_frame(self):
         if self._first_throw:
