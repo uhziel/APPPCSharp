@@ -34,6 +34,7 @@ class GameTest(unittest.TestCase):
         self._game.add(5)
         self._game.add(4)
         self.assertEqual(9, self._game.get_score())
+        self.assertEqual(1, self._game.current_frame)
 
     def test_four_throws_no_mark(self):
         self._game.add(5)
