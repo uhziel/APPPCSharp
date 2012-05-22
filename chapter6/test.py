@@ -49,5 +49,13 @@ class GameTest(unittest.TestCase):
         self._game.add(3)
         self.assertEqual(13, self._game.score_from_frame(1))
 
+    def test_simple_frame_after_spare(self):
+        self._game.add(3)
+        self._game.add(7)
+        self._game.add(3)
+        self._game.add(2)
+        self.assertEqual(13, self._game.score_from_frame(1))
+        self.assertEqual(18, self._game.score_from_frame(2))
+
 if __name__ == '__main__':
     unittest.main()
