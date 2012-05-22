@@ -34,7 +34,7 @@ class GameTest(unittest.TestCase):
         self._game.add(5)
         self._game.add(4)
         self.assertEqual(9, self._game.get_score())
-        self.assertEqual(1, self._game.current_frame)
+        self.assertEqual(2, self._game.current_frame)
 
     def test_four_throws_no_mark(self):
         self._game.add(5)
@@ -44,7 +44,7 @@ class GameTest(unittest.TestCase):
         self.assertEqual(18, self._game.get_score())
         self.assertEqual(9, self._game.score_from_frame(1))
         self.assertEqual(18, self._game.score_from_frame(2))
-        self.assertEqual(2, self._game.current_frame)
+        self.assertEqual(3, self._game.current_frame)
 
     def test_simple_spare(self):
         self._game.add(3)
