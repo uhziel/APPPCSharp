@@ -58,5 +58,13 @@ class GameTest(unittest.TestCase):
         self.assertEqual(18, self._game.get_score())
         self.assertEqual(3, self._game.current_frame)
 
+    def test_simple_strike(self):
+        self._game.add(10)
+        self._game.add(3)
+        self._game.add(6)
+        self.assertEqual(19, self._game.score_from_frame(1))
+        self.assertEqual(28, self._game.get_score())
+        self.assertEqual(3, self._game.current_frame)
+
 if __name__ == '__main__':
     unittest.main()
