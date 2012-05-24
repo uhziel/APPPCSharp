@@ -60,6 +60,7 @@ class GameTest(unittest.TestCase):
         self._game.add(2)
         self.assertEqual(13, self._game.score_from_frame(1))
         self.assertEqual(18, self._game.score_from_frame(2))
+        self.assertEqual(18, self._game.get_score())
         self.assertEqual(3, self._game.current_frame)
 
 if __name__ == '__main__':
