@@ -35,7 +35,7 @@ class Game():
             self._first_throw = True
 
     def get_score(self):
-        return self.score_from_frame(self.current_frame)
+        return self.score_from_frame(self.current_frame - 1)
 
     def score_from_frame(self, frame):
         score = 0

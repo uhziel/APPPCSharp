@@ -25,11 +25,6 @@ class GameTest(unittest.TestCase):
     def setUp(self):
         self._game = bowling.Game()
 
-    def test_one_throw(self):
-        self._game.add(4)
-        self.assertEqual(4, self._game.get_score())
-        self.assertEqual(1, self._game.current_frame)
-
     def test_two_throws_no_mark(self):
         self._game.add(5)
         self._game.add(4)
