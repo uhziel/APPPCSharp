@@ -73,5 +73,15 @@ class GameTest(unittest.TestCase):
         self.assertEqual(300, self._game.get_score())
         self.assertEqual(11, self._game.current_frame)
 
+    def test_end_of_array(self):
+        for i in range(9):
+            self._game.add(0)
+            self._game.add(0)
+
+        self._game.add(2)
+        self._game.add(8)
+        self._game.add(10)
+        self.assertEqual(20, self._game.get_score())
+
 if __name__ == '__main__':
     unittest.main()
