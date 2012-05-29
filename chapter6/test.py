@@ -83,5 +83,28 @@ class GameTest(unittest.TestCase):
         self._game.add(10)
         self.assertEqual(20, self._game.get_score())
 
+    def test_sample_array(self):
+        self._game.add(1)
+        self._game.add(4)
+        self._game.add(4)
+        self._game.add(5)
+        self._game.add(6)
+        self._game.add(4)
+        self._game.add(5)
+        self._game.add(5)
+        self._game.add(10)
+        self._game.add(0)
+        self._game.add(1)
+        self._game.add(7)
+        self._game.add(3)
+        self._game.add(6)
+        self._game.add(4)
+        self._game.add(10)
+        self._game.add(2)
+        self._game.add(8)
+        self._game.add(6)
+
+        self.assertEqual(133, self._game.get_score())
+
 if __name__ == '__main__':
     unittest.main()
