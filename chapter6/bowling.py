@@ -26,10 +26,11 @@ class Game():
         self._adjust_current_frame(pins)
 
     def _adjust_current_frame(self, pins):
-        if pins == 10:
-            self.current_frame += 1
-        elif self._first_throw:
-            self._first_throw = False
+        if self._first_throw:
+            if pins == 10:
+                self.current_frame += 1
+            else:
+                self._first_throw = False
         else:
             self.current_frame += 1
             self._first_throw = True
