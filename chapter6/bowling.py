@@ -35,6 +35,9 @@ class Game():
             self.current_frame += 1
             self._first_throw = True
 
+        if self.current_frame > 11:
+            self.current_frame = 11
+
     def get_score(self):
         return self.score_from_frame(self.current_frame - 1)
 
