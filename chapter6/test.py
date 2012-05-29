@@ -106,5 +106,12 @@ class GameTest(unittest.TestCase):
 
         self.assertEqual(133, self._game.get_score())
 
+    def test_heart_break(self):
+        for i in range(11):
+            self._game.add(10)
+        self._game.add(9)
+
+        self.assertEqual(299, self._game.get_score())
+
 if __name__ == '__main__':
     unittest.main()
