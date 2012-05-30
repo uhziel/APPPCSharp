@@ -47,11 +47,12 @@ class Game():
         self._ball = 0
         for i in range(frame):
             first_throw = self._throws[self._ball]
-            self._ball += 1
-            if first_throw == 10:
+            if self.is_strike():
+                self._ball += 1
                 frame_score = first_throw + self._throws[self._ball] + \
                     self._throws[self._ball + 1]
             else:
+                self._ball += 1
                 second_throw = self._throws[self._ball]
                 self._ball += 1
                 frame_score = first_throw + second_throw
@@ -62,3 +63,6 @@ class Game():
             score += frame_score
 
         return score
+
+    def is_strike(self):
+        return self._throws[self._ball] == 10
