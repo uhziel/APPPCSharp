@@ -17,6 +17,7 @@ class Game():
         self._throws = [0] * 21
         self._current_throw = 0
         self._first_throw = True
+        self._ball = 0
         self.current_frame = 1
 
     def add(self, pins):
@@ -43,20 +44,20 @@ class Game():
 
     def score_from_frame(self, frame):
         score = 0
-        ball = 0
+        self._ball = 0
         for i in range(frame):
-            first_throw = self._throws[ball]
-            ball += 1
+            first_throw = self._throws[self._ball]
+            self._ball += 1
             if first_throw == 10:
-                frame_score = first_throw + self._throws[ball] + \
-                    self._throws[ball + 1]
+                frame_score = first_throw + self._throws[self._ball] + \
+                    self._throws[self._ball + 1]
             else:
-                second_throw = self._throws[ball]
-                ball += 1
+                second_throw = self._throws[self._ball]
+                self._ball += 1
                 frame_score = first_throw + second_throw
 
                 if frame_score == 10:
-                    frame_score += self._throws[ball]
+                    frame_score += self._throws[self._ball]
 
             score += frame_score
 
