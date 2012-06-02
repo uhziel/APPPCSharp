@@ -54,10 +54,8 @@ class Game():
                 self._ball += 2
                 frame_score = 10 + self.get_next_ball()
             else:
-                self._ball += 1
-                second_throw = self._throws[self._ball]
-                self._ball += 1
-                frame_score = first_throw + second_throw
+                frame_score = self.get_next_two_balls()
+                self._ball += 2
 
             score += frame_score
 
