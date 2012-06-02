@@ -46,15 +46,14 @@ class Game():
         score = 0
         self._ball = 0
         for i in range(frame):
-            first_throw = self._throws[self._ball]
             if self.is_strike():
+                frame_score = 10 + self.get_next_two_balls_for_strike()
                 self._ball += 1
-                frame_score = 10 + self.get_next_two_balls()
             elif self.is_spare():
+                frame_score = 10 + self.get_next_ball_for_spare()
                 self._ball += 2
-                frame_score = 10 + self.get_next_ball()
             else:
-                frame_score = self.get_next_two_balls()
+                frame_score = self.get_next_two_balls_in_frame()
                 self._ball += 2
 
             score += frame_score
@@ -67,8 +66,11 @@ class Game():
     def is_spare(self):
         return (self._throws[self._ball] + self._throws[self._ball + 1]) == 10
 
-    def get_next_two_balls(self):
-        return self._throws[self._ball] + self._throws[self._ball + 1]
+    def get_next_two_balls_for_strike(self):
+        return self._throws[self._ball + 1] + self._throws[self._ball + 2]
 
-    def get_next_ball(self):
-        return self._throws[self._ball]
+    def get_next_ball_for_spare(self):
+        return self._throws[self._ball + 2]
+
+    def get_next_two_balls_in_frame(self):
+        return self._throws[self._ball] + self._throws[self._ball + 1]
